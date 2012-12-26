@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<head>
+  <title>{{ site.title }}</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="description" content="Documentation website">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- CSS -->
+  <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/tomorrow.min.css">
+  <link href='http://fonts.googleapis.com/css?family=Imprima' rel='stylesheet' type='text/css'>
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+
+  <!-- Icons -->
+  <link rel="shortcut icon" href="/images/favicon.ico">
+  <link rel="apple-touch-icon" href="/images/apple-touch-icon.png">
+  <link rel="apple-touch-icon" sizes="72x72" href="/images/apple-touch-icon-72x72.png">
+  <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
+</head>
+<body>
+  <header id="header">
+  	<h1>{{ site.title }}</h1>
+  	<nav>
+  	  <ul>
+  	    <li><a href='{{ site.parent.url }}'>{{ site.parent.name }}</a></li>
+  	  </ul>
+  	</nav>
+  </header>
+  <div id="content">
+    {{ content }}
+  </div>
+  
+  <!-- JS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
+  <script type="text/javascript">(function($) { hljs.initHighlightingOnLoad(); })(jQuery);</script>
+  <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</body>
+</html>

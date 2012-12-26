@@ -1,0 +1,23 @@
+---
+layout: default
+---
+
+<section id='references'>
+{% for post in site.posts %}
+  <article>
+    <a name='{{ post.url }}'></a>
+    <h2>{{ post.title }} <code><b>{{ post.type }}</b> {{ post.path }}</code></h2>
+    <section class='body'>
+      {{ post.content }}
+    </section>
+  </article>
+{% endfor %}
+</section>
+
+<nav id='links'>
+  <ul>
+  {% for post in site.posts %}
+    <li><a href='#{{ post.url }}'>{{ post.title }}</a></li>
+  {% endfor %}
+  </ul>
+</nav>
