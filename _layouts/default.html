@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<head>
+  <title>{{ site.title }}</title>
+
+  <!-- Meta -->
+  <meta charset="utf-8">
+  <meta name="description" content="Documentation website">
+  <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+
+  <!-- CSS -->
+  <link href="/css/normalize.css" rel="stylesheet" type="text/css">
+  <link href="/css/style.css" rel="stylesheet" type="text/css">
+</head>
+<body>
+  {{ content }}
+  
+  <!-- JS -->
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
+  <script type="text/javascript">
+    (function($) {
+      // Collapsible articles
+      $('article').each(function () {
+        var that = $(this);
+        var header = that.children('a');
+        var body = that.children('.body');
+        body.hide();
+        header.toggle(
+          function () { body.slideDown('fast'); that.addClass('active'); },
+          function () { body.slideUp('fast'); that.removeClass('active'); }
+        );
+      });
+      
+      // Expanding the article on link click and scrolling down to it
+      $('#links a').each(function () {
+        var that = $(this);
+        that.click(function (e) {
+          e.preventDefault();
+          var that = $(this);
+          var id = that.attr('href').substring(1);
+          var header = $('article a[name="'+ id +'"]')
+          if (!header.parent().hasClass('active')) header.trigger('click');
+          $('html, body').animate({
+            scrollTop: header.offset().top
+          }, 'fast');
+        });
+      });
+    })(jQuery);
+  </script>
+  <!--[if lt IE 9]>
+		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
+	<![endif]-->
+</body>
+</html>
