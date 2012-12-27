@@ -2,7 +2,7 @@
 path: '/login'
 title: 'Authenticate'
 
-layout: post
+layout: nil
 ---
 
 This method allows users to retrieve stuff.

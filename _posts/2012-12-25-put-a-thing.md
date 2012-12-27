@@ -3,7 +3,7 @@ path: '/stuff/:id'
 title: 'Update a thing'
 type: 'PUT'
 
-layout: post
+layout: nil
 ---
 
 This method allows the user to retrieve his stuff.

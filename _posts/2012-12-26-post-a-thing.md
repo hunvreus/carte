@@ -3,7 +3,7 @@ path: '/stuff'
 title: 'Post a thing'
 type: 'POST'
 
-layout: post
+layout: nil
 ---
 
 This method allows users to crate a new thing.
