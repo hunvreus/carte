@@ -6,65 +6,52 @@ body {
 body,
 input,
 textarea {
-  color: #333;
-  font: 16px/160% Arial, sans-serif;
+  color: #333f45;
+  font: 14px/140% Arial, sans-serif;
 }
 
 a {
-  color: #19A9E5;
+  color: #119bdf;
   text-decoration: none;
+}
+a:hover {
+  color: #29aeef;
 }
 
 h1,
 h2,
 h3,
+h4,
 p,
 ul,
 code {
   margin: 0 0 20px;
 }
 
-/* Header */
-header#header {
-  background: #333;
-  color: #fff;
-  padding: 15px 20px;
+h1,
+h2,
+h3,
+h4 {
+  color: #111517;
 }
 
-header#header h1 {
-  font-size: 16px;
-  float: right;
-  margin: 0;
+code {
+  font-family: 'Monaco', monospace, sans-serif;
 }
 
-header#header ul {
-  display: inline-block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-header#header ul li {
-  display: inline-block;
-  list-style: none;
-  margin: 0;
-  padding: 0;
-}
-
-/* Content */
-#content {
-  padding: 15px 20px;
-  position: relative;
-}
-
+/* Links */
 #links {
-  background: #eee;
-  border-right: 1px solid #ddd;
-  left: 0;
   height: 100%;
-  position: absolute;
+  left: 0;
+  padding: 20px;
+  position: fixed;
   top: 0;
-  width: 220px;
+  width: 200px;
+}
+
+#links h1 {
+  font-size: 16px;
+  text-transform: uppercase;
 }
 
 #links ul {
@@ -73,24 +60,132 @@ header#header ul li {
   padding: 0;
 }
 
-#links ul li {
-  border-bottom: 1px solid #ddd;
-}
-
 #links ul li a {
   display: block;
-  padding: 10px 20px;
+  padding: 0 0 15px;
+}
+#links ul li a:active,
+#links ul li a.active {
+  text-decoration: underline;
 }
 
+/* References */
 #references {
-  margin-left: 220px;
+  padding: 20px;
+  padding-left: 260px;
+  max-width: 700px;
 }
 
-#references .body code {
-  background: #eee;
+#references article {
   border: 1px solid #ddd;
   border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+#references article > a {
+  background: #eef1f2;
+  cursor: pointer;
+  display: block;
+  padding: 15px;
+}
+#references article > a:hover {
+  background: #fff;
+}
+
+#references a h2 {
+  color: #333;
+  font-size: 16px;
+  margin: 0;
+  text-align: right;
+}
+
+#references a h2 code {
+  float: left;
+}
+
+#references a h2 code b {
   border-radius: 3px;
-  left: 20px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  color: #fff;
+  padding: 3px 6px;
+}
+
+/* Default */
+#references article {
+  border-color: #e2e7ea;
+}
+
+#references article a h2 code {
+  color: #657e8b;
+}
+
+#references article a h2 code b {
+  background: #657e8b;
+  text-transform: uppercase;
+}
+
+/* GET */
+#references article.GET a h2 code {
+  color: #119bdf;
+}
+
+#references article.GET a h2 code b {
+  background: #119bdf;
+}
+
+/* POST */
+#references article.POST a h2 code {
+  color: #52ce0e;
+}
+
+#references article.POST a h2 code b {
+  background: #52ce0e;
+}
+
+/* PUT */
+#references article.PUT a h2 code {
+  color: #e08f10;
+}
+
+#references article.PUT a h2 code b {
+  background: #e08f10;
+}
+
+/* DELETE */
+#references article.DELETE a h2 code {
+  color: #e02a10;
+}
+
+#references article.DELETE a h2 code b {
+  background: #e02a10;
+}
+
+/* Reference's body */
+#references h3 {
+  text-transform: uppercase;
+}
+
+#references .body {
+  display: block;
+  clear: both;
   padding: 15px 20px;
+}
+
+#references .body p code {
+  border: 1px solid #e2e7ea;
+  background: #eef1f2;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  color: #546974;
+  display: block;
+  padding: 15px;
+  white-space: pre;
+}
+
+#references .body p code+p code {
+  background: red;
 }

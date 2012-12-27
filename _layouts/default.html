@@ -9,8 +9,6 @@
 
   <!-- CSS -->
   <link href="/css/normalize.css" rel="stylesheet" type="text/css">
-  <link rel="stylesheet" href="http://yandex.st/highlightjs/7.3/styles/tomorrow.min.css">
-  <link href='http://fonts.googleapis.com/css?family=Imprima' rel='stylesheet' type='text/css'>
   <link href="/css/style.css" rel="stylesheet" type="text/css">
 
   <!-- Icons -->
@@ -20,22 +18,40 @@
   <link rel="apple-touch-icon" sizes="114x114" href="/images/apple-touch-icon-114x114.png">
 </head>
 <body>
-  <header id="header">
-  	<h1>{{ site.title }}</h1>
-  	<nav>
-  	  <ul>
-  	    <li><a href='{{ site.parent.url }}'>{{ site.parent.name }}</a></li>
-  	  </ul>
-  	</nav>
-  </header>
-  <div id="content">
-    {{ content }}
-  </div>
+  {{ content }}
   
   <!-- JS -->
   <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.8.3/jquery.min.js" type="text/javascript"></script>
-  <script src="http://yandex.st/highlightjs/7.3/highlight.min.js"></script>
-  <script type="text/javascript">(function($) { hljs.initHighlightingOnLoad(); })(jQuery);</script>
+  <script type="text/javascript">
+    (function($) {
+      // Collapsible articles
+      $('article').each(function () {
+        var that = $(this);
+        var header = that.children('a');
+        var body = that.children('.body');
+        body.hide();
+        header.toggle(
+          function () { body.slideDown('fast'); that.addClass('active'); },
+          function () { body.slideUp('fast'); that.removeClass('active'); }
+        );
+      });
+      
+      // Expanding the article on link click and scrolling down to it
+      $('#links a').each(function () {
+        var that = $(this);
+        that.click(function (e) {
+          e.preventDefault();
+          var that = $(this);
+          var id = that.attr('href').substring(1);
+          var header = $('article a[name="'+ id +'"]')
+          if (!header.parent().hasClass('active')) header.trigger('click');
+          $('html, body').animate({
+            scrollTop: header.offset().top
+          }, 'fast');
+        });
+      });
+    })(jQuery);
+  </script>
   <!--[if lt IE 9]>
 		<script src="http://html5shim.googlecode.com/svn/trunk/html5.js"></script>
 	<![endif]-->

@@ -3,6 +3,4 @@ exclude: ['README.markdown']
 permalink: ':title'
 pygments: true
 safe: false
-url: 'htt://example.com'
 title: 'Carte'
-parent: {name: '← Return to example.com', url: 'http://example.com'}
