@@ -36,13 +36,15 @@ Variable | Mandatory | Default | Description
 
 A typical header:
 
-```---
+```
+---
 path: '/stuff/:id'
 title: 'Delete a thing'
 type: 'DELETE'
 
 layout: nil
----```
+---
+```
 
 We then describe the request and response (or whatever else you wish to talk about) in the body of our post. Check the placeholders present in the `_posts` folder to get an idea of what it can look like.
 
