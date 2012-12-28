@@ -185,7 +185,7 @@ code {
   padding: 15px;
   white-space: pre;
 }
-
-#references .body p code+p code {
+/*
+#references .body code+code {
   background: red;
-}
+}*/

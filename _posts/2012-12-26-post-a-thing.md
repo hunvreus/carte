@@ -3,21 +3,17 @@ path: '/stuff'
 title: 'Post a thing'
 type: 'POST'
 
-<<<<<<< HEAD
 layout: nil
-=======
-layout: post
->>>>>>> master
 ---
 
 This method allows users to crate a new thing.
 
 ### Request
 
-Expects a fully formed thing object.
+* The headers must include a **valid authentication token**.
+* **The body can't be empty** and must include at least the name attribute, a `string` that will be used as the name of the thing.
 
 ```Authentication: bearer TOKEN```
-
 ```{
     name: 'My new thing'
 }```
@@ -27,10 +23,9 @@ Expects a fully formed thing object.
 **If succeeds**, returns the created thing.
 
 ```Status: 201 Created```
-
 ```{
     id: new_thing,
     name: 'My new thing'
 }```
 
-ERROR
+For errors responses, see the [response status codes documentation](#response-status-codes).

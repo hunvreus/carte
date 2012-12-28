@@ -8,13 +8,8 @@
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
 
   <!-- CSS -->
-<<<<<<< HEAD
   <link href="./css/normalize.css" rel="stylesheet" type="text/css">
   <link href="./css/style.css" rel="stylesheet" type="text/css">
-=======
-  <link href="/css/normalize.css" rel="stylesheet" type="text/css">
-  <link href="/css/style.css" rel="stylesheet" type="text/css">
->>>>>>> master
 </head>
 <body>
   {{ content }}
@@ -38,15 +33,20 @@
       // Expanding the article on link click and scrolling down to it
       $('#links a').each(function () {
         var that = $(this);
+        var id = that.attr('href').substring(1);
         that.click(function (e) {
           e.preventDefault();
-          var that = $(this);
-          var id = that.attr('href').substring(1);
           var header = $('article a[name="'+ id +'"]')
           if (!header.parent().hasClass('active')) header.trigger('click');
           $('html, body').animate({
             scrollTop: header.offset().top
           }, 'fast');
+        });
+        
+        // If we find a link in the body with similar anchor, add the same behavior
+        $('.body a[href=#'+ id +']').click(function (e) {
+            e.preventDefault();
+            $('#links a[href=#'+ id +']').trigger('click');
         });
       });
     })(jQuery);
