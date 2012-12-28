@@ -2,7 +2,11 @@
 path: '/login'
 title: 'Authenticate'
 
+<<<<<<< HEAD
 layout: nil
+=======
+layout: post
+>>>>>>> master
 ---
 
 This method allows users to retrieve stuff.
