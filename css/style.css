@@ -36,7 +36,7 @@ h4 {
 }
 
 code {
-  font-family: 'Monaco', monospace, sans-serif;
+  font-family: monospace, sans-serif;
 }
 
 /* Links */
@@ -174,18 +174,18 @@ code {
   padding: 15px 20px;
 }
 
-#references .body p code {
+#references .body code {
   border: 1px solid #e2e7ea;
   background: #eef1f2;
   border-radius: 3px;
   -moz-border-radius: 3px;
   -webkit-border-radius: 3px;
   color: #546974;
+  padding: 0 1px;
+}
+
+#references .body p > code {
   display: block;
   padding: 15px;
   white-space: pre;
 }
-/*
-#references .body code+code {
-  background: red;
-}*/
