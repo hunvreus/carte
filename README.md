@@ -52,7 +52,6 @@ We then describe the request and response (or whatever else you wish to talk abo
 
 Adding a category to your YAML header will allows you to group methods in the navigation. It is particularly helpful as you start having a lot of methods and need to organize them. For example:
 
-
 ```
 ---
 category: Stuff

@@ -1,0 +1,223 @@
+/* GENERAL */
+body {
+  background: #fff;
+}
+
+body,
+input,
+textarea {
+  color: #333f45;
+  font: 14px/140% 'Open Sans', Arial, sans-serif;
+}
+
+a {
+  color: #119bdf;
+  text-decoration: none;
+}
+a:hover {
+  color: #29aeef;
+  text-decoration: underline;
+}
+
+h1,
+h2,
+h3,
+h4,
+p,
+ul,
+code {
+  margin: 0 0 20px;
+}
+
+code {
+  font-family: 'Monaco', monospace, sans-serif;
+}
+
+/* HEADER */
+#header {
+  background: #222;
+  color: #fff;
+  padding: 20px;
+  text-align: right;
+}
+
+#header h1 {
+  float: left;
+  font-size: 14px;
+  font-weight: normal;
+  margin: 0;
+  text-transform: uppercase;
+}
+
+#header ul {
+  display: inline;
+  margin: 0;
+  padding: 0;
+  list-style: none;
+}
+
+#header ul li {
+  display: inline;
+  margin: 0 0 0 20px;
+}
+
+#header ul li a {
+  color: #fff;
+}
+
+/* CONTENT */
+
+/* Links */
+#links {
+  height: 100%;
+  padding: 20px;
+  float: left;
+  top: 0;
+  width: 200px;
+}
+
+#links h2 {
+  font-size: 16px;
+  margin: 0;
+}
+
+#links ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+#links ul ul {
+  padding-left: 20px;
+}
+
+#links ul li a {
+  display: block;
+  padding: 0 0 15px;
+}
+#links ul li a:active,
+#links ul li a.active {
+  text-decoration: underline;
+}
+
+/* References */
+#references {
+  padding: 20px;
+  padding-left: 260px;
+  max-width: 700px;
+}
+
+#references article {
+  border: 1px solid #ddd;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  margin-bottom: 15px;
+}
+
+#references article > a {
+  background: #eef1f2;
+  cursor: pointer;
+  display: block;
+  padding: 15px;
+}
+#references article > a:hover {
+  background: #fff;
+  text-decoration: none;
+}
+
+#references a h2 {
+  color: #333;
+  font-size: 16px;
+  margin: 0;
+  text-align: right;
+}
+
+#references a h2 code {
+  float: left;
+}
+
+#references a h2 code b {
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  color: #fff;
+  font-weight: normal;
+  padding: 3px 6px;
+}
+
+/* Default */
+#references article {
+  border-color: #e2e7ea;
+}
+
+#references article a h2 code {
+  color: #657e8b;
+}
+
+#references article a h2 code b {
+  background: #657e8b;
+  text-transform: uppercase;
+}
+
+/* GET */
+#references article.GET a h2 code {
+  color: #119bdf;
+}
+
+#references article.GET a h2 code b {
+  background: #119bdf;
+}
+
+/* POST */
+#references article.POST a h2 code {
+  color: #52ce0e;
+}
+
+#references article.POST a h2 code b {
+  background: #52ce0e;
+}
+
+/* PUT */
+#references article.PUT a h2 code {
+  color: #e08f10;
+}
+
+#references article.PUT a h2 code b {
+  background: #e08f10;
+}
+
+/* DELETE */
+#references article.DELETE a h2 code {
+  color: #e02a10;
+}
+
+#references article.DELETE a h2 code b {
+  background: #e02a10;
+}
+
+/* Reference's body */
+#references h3 {
+  text-transform: uppercase;
+}
+
+#references .body {
+  display: block;
+  padding: 15px 20px;
+}
+
+#references .body code {
+  border: 1px solid #e2e7ea;
+  background: #eef1f2;
+  border-radius: 3px;
+  -moz-border-radius: 3px;
+  -webkit-border-radius: 3px;
+  color: #546974;
+  padding: 0 1px;
+}
+
+#references .body p > code {
+  display: block;
+  padding: 15px;
+  white-space: pre;
+}
