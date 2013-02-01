@@ -48,6 +48,22 @@ layout: nil
 
 We then describe the request and response (or whatever else you wish to talk about) in the body of our post. Check the placeholders present in the `_posts` folder to get an idea of what it can look like.
 
+### Grouping calls
+
+Adding a category to your YAML header will allows you to group methods in the navigation. It is particularly helpful as you start having a lot of methods and need to organize them. For example:
+
+
+```
+---
+category: Stuff
+path: '/stuff/:id'
+title: 'Delete a thing'
+type: 'DELETE'
+
+layout: nil
+---
+```
+
 ### Edit the design
 
 The default UI is mostly described through the `css/style.css` file and a couple short jQuery scripts in the `/_layouts/default.html` layout. Hack it to oblivion.
