@@ -1,4 +1,5 @@
 ---
+category: Stuff
 path: '/stuff/:id'
 title: 'Update a thing'
 type: 'PUT'
