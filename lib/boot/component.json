@@ -5,7 +5,7 @@
         "necolas/normalize.css": "*",
         "component/jquery": "*"
     },
-    "local": ["sticky", "filter"],
+    "local": ["filter"],
     "scripts": ["index.js"],
     "styles": ["style.css"]
 }

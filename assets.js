@@ -9612,31 +9612,6 @@ if ( typeof define === "function" && define.amd && define.amd.jQuery ) {
 })( window );
 
 });
-require.register("sticky/index.js", function(exports, require, module){
-// Dependencies
-var $ = require('jquery');
-
-// Expose `Sticky`.
-module.exports = Sticky;
-
-/**
- * Initialize a `Sticky` element.
- */
-function Sticky(el) {
-    this.el = el;
-    this.limit = $(this.el).offset().top;
-    var self = this;
-    $(window).scroll(function(e) {
-        if ($(window).scrollTop() > self.limit) {
-            $(self.el).addClass('sticked');
-        }
-        else {
-            $(self.el).removeClass('sticked');
-        }
-    });
-    return this;
-}
-});
 require.register("filter/index.js", function(exports, require, module){
 // Dependencies
 var $ = require('jquery');
@@ -9737,17 +9712,11 @@ hide.click(function () {
 $('#content').prepend(hide);
 
 // Making our navigation sticky
-new Sticky($('#sidebar'));
-
-// Making our navigation sticky
 new Filter($('#sidebar > ul'));
 });
 require.alias("boot/index.js", "carte/deps/boot/index.js");
 
 require.alias("component-jquery/index.js", "boot/deps/jquery/index.js");
-
-require.alias("sticky/index.js", "boot/deps/sticky/index.js");
-require.alias("component-jquery/index.js", "sticky/deps/jquery/index.js");
 
 require.alias("filter/index.js", "boot/deps/filter/index.js");
 require.alias("component-jquery/index.js", "filter/deps/jquery/index.js");
