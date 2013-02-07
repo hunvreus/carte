@@ -9664,7 +9664,6 @@ function Filter(list) {
 });
 require.register("boot/index.js", function(exports, require, module){
 var $ = require('jquery'),
-    Sticky = require('sticky'),
     Filter = require('filter');
 
 // Collapsible articles
