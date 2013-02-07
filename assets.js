@@ -9637,9 +9637,60 @@ function Sticky(el) {
     return this;
 }
 });
+require.register("filter/index.js", function(exports, require, module){
+// Dependencies
+var $ = require('jquery');
+
+// Expose `Filter`.
+module.exports = Filter;
+
+// Case-insensitive contains()
+$.expr[':'].Contains = function(a,i,m){
+    return (a.textContent || a.innerText || '').toUpperCase().indexOf(m[3].toUpperCase())>=0;
+};
+
+/**
+ * Initialize a filterable list.
+ */
+function Filter(list) {
+    this.el = list;
+    
+    // Filter input
+    var form = $('<form>').attr({ 'action':'#' });
+    var input = $('<input>').attr({ 'type':'text', 'placeholder':'Filter by keyword' });
+    $(form).append(input).prependTo(this.el);
+    
+    // Filter function
+    var self = this;
+    $(input).change(function () {
+        var filter = $(this).val();
+        if(filter) {
+            $(self.el).find('a:not(:Contains(' + filter + '))').parent().hide();
+            $(self.el).find('a:Contains(' + filter + ')').parent().show();
+        } else {
+            $(self.el).find('li').show();
+        }
+        
+        // Hide titles when group is empty
+        $(self.el).find('ul').each(function () {
+            if (!$(this).find('li:visible').length) {
+                $(this).prev('h2').hide();
+            } else {
+                $(this).prev('h2').show();
+            }
+        });
+
+        return false;
+    })
+    .keyup( function () { $(this).change(); });
+    
+    return this;
+}
+});
 require.register("boot/index.js", function(exports, require, module){
 var $ = require('jquery'),
-    Sticky = require('sticky');
+    Sticky = require('sticky'),
+    Filter = require('filter');
 
 // Collapsible articles
 $('article').each(function () {
@@ -9653,8 +9704,11 @@ $('article').each(function () {
     );
 });
 
+var anchor = window.location.hash.substring(1);
+if (anchor) $('article a[name=' + anchor + ']').trigger('click');
+
 // Expanding the article on link click and scrolling down to it
-$('#links a').each(function () {
+$('#sidebar a').each(function () {
     var that = $(this);
     var id = that.attr('href').substring(1);
     that.click(function (e) {
@@ -9665,12 +9719,28 @@ $('#links a').each(function () {
 
     // If we find a link in the body with similar anchor, add the same behavior
     $('.body a[href=#'+ id +']').click(function (e) {
-        $('#links a[href=#'+ id +']').trigger('click');
+        $('#sidebar a[href=#'+ id +']').trigger('click');
     });
 });
 
+// Hide all/Show all links
+var show = $('<a class=\'control show\'>Show all</a>');
+show.click(function () {
+  $('#content article:not(".active") > a').trigger('click');    
+});
+$('#content').prepend(show);
+
+var hide = $('<a class=\'control hide\'>Hide all</a>');
+hide.click(function () {
+  $('#content article.active > a').trigger('click');    
+});
+$('#content').prepend(hide);
+
 // Making our navigation sticky
-new Sticky($('#links'));
+new Sticky($('#sidebar'));
+
+// Making our navigation sticky
+new Filter($('#sidebar > ul'));
 });
 require.alias("boot/index.js", "carte/deps/boot/index.js");
 
@@ -9678,4 +9748,7 @@ require.alias("component-jquery/index.js", "boot/deps/jquery/index.js");
 
 require.alias("sticky/index.js", "boot/deps/sticky/index.js");
 require.alias("component-jquery/index.js", "sticky/deps/jquery/index.js");
+
+require.alias("filter/index.js", "boot/deps/filter/index.js");
+require.alias("component-jquery/index.js", "filter/deps/jquery/index.js");
 

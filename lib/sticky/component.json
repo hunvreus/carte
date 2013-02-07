@@ -1,9 +1,0 @@
-{
-    "name": "sticky",
-    "description": "Makes an element stick to the top when scrolling.",
-    "dependencies": {
-        "component/jquery": "*"
-    },
-    "scripts": ["index.js"],
-    "styles": ["style.css"]
-}
