@@ -7,7 +7,7 @@ type: 'POST'
 layout: nil
 ---
 
-This method allows users to crate a new thing.
+This method allows users to create a new thing.
 
 ### Request
 
