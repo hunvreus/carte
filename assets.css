@@ -73,6 +73,7 @@ html {
 
 body {
     margin: 0;
+    min-width: 960px;
 }
 
 /* ==========================================================================
@@ -444,7 +445,7 @@ code {
   float: left;  
   height: 100%;
   overflow: auto;
-  position: fixed;
+  position: absolute;
   top: 0;
   width: 240px;
 }
@@ -617,9 +618,13 @@ code {
 }
 
 #content .body {
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
   border-top: 1px solid #eef1f2;
+  box-sizing: border-box;
   display: block;
   padding: 15px 15px 0;
+  width: 100%;
 }
 
 #content .body code {
