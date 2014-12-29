@@ -17,7 +17,7 @@ This method allows the user to post a new thing to his stuff.
 
 ### Response
 
-Sends back a collection of things.
+Sends back the status of deleted item
 
 ```Status: 200 Deleted```
 ```{
