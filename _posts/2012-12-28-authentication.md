@@ -1,8 +1,6 @@
 ---
 path: '/login'
 title: 'Authenticate'
-
-layout: nil
 ---
 
 This method allows users to retrieve stuff.
