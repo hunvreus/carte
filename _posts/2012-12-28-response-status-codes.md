@@ -11,7 +11,7 @@ Successes differ from errors in that their body may not be a simple response obj
 * `GET`, `PUT`, `DELETE` returns `200 OK` on success,
 * `POST ` returns 201 on success,
 
-When [retrieving stuff](#get-stuff) for example:
+When [retrieving stuff](#/get-stuff) for example:
 
 ```Status: 200 OK```
 ```{
