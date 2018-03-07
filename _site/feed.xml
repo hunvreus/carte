@@ -1,0 +1,162 @@
+<?xml version="1.0" encoding="utf-8"?><feed xmlns="http://www.w3.org/2005/Atom" ><generator uri="https://jekyllrb.com/" version="3.6.2">Jekyll</generator><link href="http://localhost:4000/feed.xml" rel="self" type="application/atom+xml" /><link href="http://localhost:4000/" rel="alternate" type="text/html" /><updated>2018-03-07T03:56:41-07:00</updated><id>http://localhost:4000/</id><title type="html">Your awesome title</title><subtitle>Write an awesome description for your new site here. You can edit this line in _config.yml. It will appear in your document head meta (for Google search results) and in your feed.xml site description.</subtitle><entry><title type="html">Welcome to Jekyll!</title><link href="http://localhost:4000/jekyll/update/2018/03/07/welcome-to-jekyll.html" rel="alternate" type="text/html" title="Welcome to Jekyll!" /><published>2018-03-07T03:13:05-07:00</published><updated>2018-03-07T03:13:05-07:00</updated><id>http://localhost:4000/jekyll/update/2018/03/07/welcome-to-jekyll</id><content type="html" xml:base="http://localhost:4000/jekyll/update/2018/03/07/welcome-to-jekyll.html">&lt;p&gt;You’ll find this post in your &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run &lt;code class=&quot;highlighter-rouge&quot;&gt;jekyll serve&lt;/code&gt;, which launches a web server and auto-regenerates your site when a file is updated.&lt;/p&gt;
+
+&lt;p&gt;To add new posts, simply add a file in the &lt;code class=&quot;highlighter-rouge&quot;&gt;_posts&lt;/code&gt; directory that follows the convention &lt;code class=&quot;highlighter-rouge&quot;&gt;YYYY-MM-DD-name-of-post.ext&lt;/code&gt; and includes the necessary front matter. Take a look at the source for this post to get an idea about how it works.&lt;/p&gt;
+
+&lt;p&gt;Jekyll also offers powerful support for code snippets:&lt;/p&gt;
+
+&lt;figure class=&quot;highlight&quot;&gt;&lt;pre&gt;&lt;code class=&quot;language-ruby&quot; data-lang=&quot;ruby&quot;&gt;&lt;span class=&quot;k&quot;&gt;def&lt;/span&gt; &lt;span class=&quot;nf&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+  &lt;span class=&quot;nb&quot;&gt;puts&lt;/span&gt; &lt;span class=&quot;s2&quot;&gt;&quot;Hi, &lt;/span&gt;&lt;span class=&quot;si&quot;&gt;#{&lt;/span&gt;&lt;span class=&quot;nb&quot;&gt;name&lt;/span&gt;&lt;span class=&quot;si&quot;&gt;}&lt;/span&gt;&lt;span class=&quot;s2&quot;&gt;&quot;&lt;/span&gt;
+&lt;span class=&quot;k&quot;&gt;end&lt;/span&gt;
+&lt;span class=&quot;n&quot;&gt;print_hi&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;(&lt;/span&gt;&lt;span class=&quot;s1&quot;&gt;'Tom'&lt;/span&gt;&lt;span class=&quot;p&quot;&gt;)&lt;/span&gt;
+&lt;span class=&quot;c1&quot;&gt;#=&amp;gt; prints 'Hi, Tom' to STDOUT.&lt;/span&gt;&lt;/code&gt;&lt;/pre&gt;&lt;/figure&gt;
+
+&lt;p&gt;Check out the &lt;a href=&quot;https://jekyllrb.com/docs/home&quot;&gt;Jekyll docs&lt;/a&gt; for more info on how to get the most out of Jekyll. File all bugs/feature requests at &lt;a href=&quot;https://github.com/jekyll/jekyll&quot;&gt;Jekyll’s GitHub repo&lt;/a&gt;. If you have questions, you can ask them on &lt;a href=&quot;https://talk.jekyllrb.com/&quot;&gt;Jekyll Talk&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">You’ll find this post in your _posts directory. Go ahead and edit it and re-build the site to see your changes. You can rebuild the site in many different ways, but the most common way is to run jekyll serve, which launches a web server and auto-regenerates your site when a file is updated.</summary></entry><entry><title type="html">Response status codes</title><link href="http://localhost:4000/2012/12/28/response-status-codes.html" rel="alternate" type="text/html" title="Response status codes" /><published>2012-12-28T00:00:00-07:00</published><updated>2012-12-28T00:00:00-07:00</updated><id>http://localhost:4000/2012/12/28/response-status-codes</id><content type="html" xml:base="http://localhost:4000/2012/12/28/response-status-codes.html">&lt;h3 id=&quot;success&quot;&gt;Success&lt;/h3&gt;
+
+&lt;p&gt;Successes differ from errors in that their body may not be a simple response object with a code and a message. The headers however are consistent across all calls:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;GET&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;PUT&lt;/code&gt;, &lt;code class=&quot;highlighter-rouge&quot;&gt;DELETE&lt;/code&gt; returns &lt;code class=&quot;highlighter-rouge&quot;&gt;200 OK&lt;/code&gt; on success,&lt;/li&gt;
+  &lt;li&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;POST &lt;/code&gt; returns 201 on success,&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;When &lt;a href=&quot;#get-stuff&quot;&gt;retrieving stuff&lt;/a&gt; for example:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Status: 200 OK&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;{
+    {
+        id: thing_1,
+        name: 'My first thing'
+    },
+    {
+        id: thing_2,
+        name: 'My second thing'
+    }
+}&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;error&quot;&gt;Error&lt;/h3&gt;
+
+&lt;p&gt;Error responses are simply returning &lt;a href=&quot;http://www.w3.org/Protocols/rfc2616/rfc2616-sec10.html&quot;&gt;standard HTTP error codes&lt;/a&gt; along with some additional information:&lt;/p&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The error code is sent back as a status header,&lt;/li&gt;
+  &lt;li&gt;The body includes an object describing both the code and message (for debugging and/or display purposes),&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;For a call with an invalid authentication token for example:&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Status: 401 Access denied&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;{
+    code: 401,
+    message: 'Access denied: invalid authentication token.'
+}&lt;/code&gt;&lt;/p&gt;</content><author><name></name></author><summary type="html">Success</summary></entry><entry><title type="html">Authenticate</title><link href="http://localhost:4000/2012/12/28/authentication.html" rel="alternate" type="text/html" title="Authenticate" /><published>2012-12-28T00:00:00-07:00</published><updated>2012-12-28T00:00:00-07:00</updated><id>http://localhost:4000/2012/12/28/authentication</id><content type="html" xml:base="http://localhost:4000/2012/12/28/authentication.html">&lt;p&gt;This method allows users to retrieve stuff.&lt;/p&gt;
+
+&lt;h3 id=&quot;response&quot;&gt;Response&lt;/h3&gt;
+
+&lt;p&gt;Sends back a collection of things.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Authentication: bearer TOKEN&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;{
+    id: thing_2,
+    name: 'My second thing'
+}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For errors responses, see the &lt;a href=&quot;#response-status-codes&quot;&gt;response status codes documentation&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><summary type="html">This method allows users to retrieve stuff.</summary></entry><entry><title type="html">Get stuff</title><link href="http://localhost:4000/stuff/2012/12/27/get-stuff.html" rel="alternate" type="text/html" title="Get stuff" /><published>2012-12-27T00:00:00-07:00</published><updated>2012-12-27T00:00:00-07:00</updated><id>http://localhost:4000/stuff/2012/12/27/get-stuff</id><content type="html" xml:base="http://localhost:4000/stuff/2012/12/27/get-stuff.html">&lt;p&gt;This method allows users to retrieve stuff.&lt;/p&gt;
+
+&lt;h3 id=&quot;request&quot;&gt;Request&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The headers must include a &lt;strong&gt;valid authentication token&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;response&quot;&gt;Response&lt;/h3&gt;
+
+&lt;p&gt;Sends back a collection of things.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Status: 200 OK&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;{
+    {
+        id: thing_1,
+        name: 'My first thing'
+    },
+    {
+        id: thing_2,
+        name: 'My second thing'
+    }
+}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For errors responses, see the &lt;a href=&quot;#response-status-codes&quot;&gt;response status codes documentation&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Stuff" /><summary type="html">This method allows users to retrieve stuff.</summary></entry><entry><title type="html">Post a thing</title><link href="http://localhost:4000/stuff/2012/12/26/post-a-thing.html" rel="alternate" type="text/html" title="Post a thing" /><published>2012-12-26T00:00:00-07:00</published><updated>2012-12-26T00:00:00-07:00</updated><id>http://localhost:4000/stuff/2012/12/26/post-a-thing</id><content type="html" xml:base="http://localhost:4000/stuff/2012/12/26/post-a-thing.html">&lt;p&gt;This method allows users to create a new thing.&lt;/p&gt;
+
+&lt;h3 id=&quot;request&quot;&gt;Request&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;The headers must include a &lt;strong&gt;valid authentication token&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The body can’t be empty&lt;/strong&gt; and must include at least the name attribute, a &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt; that will be used as the name of the thing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Authentication: bearer TOKEN&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;{
+    name: 'My new thing'
+}&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;response&quot;&gt;Response&lt;/h3&gt;
+
+&lt;p&gt;&lt;strong&gt;If succeeds&lt;/strong&gt;, returns the created thing.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Status: 201 Created&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;{
+    id: new_thing,
+    name: 'My new thing'
+}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For errors responses, see the &lt;a href=&quot;#response-status-codes&quot;&gt;response status codes documentation&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Stuff" /><summary type="html">This method allows users to create a new thing.</summary></entry><entry><title type="html">Update a thing</title><link href="http://localhost:4000/stuff/2012/12/25/put-a-thing.html" rel="alternate" type="text/html" title="Update a thing" /><published>2012-12-25T00:00:00-07:00</published><updated>2012-12-25T00:00:00-07:00</updated><id>http://localhost:4000/stuff/2012/12/25/put-a-thing</id><content type="html" xml:base="http://localhost:4000/stuff/2012/12/25/put-a-thing.html">&lt;p&gt;This method allows the user to retrieve his stuff.&lt;/p&gt;
+
+&lt;h3 id=&quot;request&quot;&gt;Request&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:id&lt;/code&gt;&lt;/strong&gt; is the id the thing to update.&lt;/li&gt;
+  &lt;li&gt;The headers must include a &lt;strong&gt;valid authentication token&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The body can’t be empty&lt;/strong&gt; and must include at least the name attribute, a &lt;code class=&quot;highlighter-rouge&quot;&gt;string&lt;/code&gt; that will be used as the name of the thing.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Authentication: bearer f862f658-ad89-4fcb-995b-7a4c50554ff6&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;{
+    name: 'My new thing'
+}&lt;/code&gt;&lt;/p&gt;
+
+&lt;h3 id=&quot;response&quot;&gt;Response&lt;/h3&gt;
+
+&lt;p&gt;Sends back a collection of things.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Status: 200 OK&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;{
+    {
+        id: thing_1,
+        name: 'My first thing'
+    },
+    {
+        id: thing_2,
+        name: 'My second thing'
+    }
+}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For errors responses, see the &lt;a href=&quot;#response-status-codes&quot;&gt;response status codes documentation&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Stuff" /><summary type="html">This method allows the user to retrieve his stuff.</summary></entry><entry><title type="html">Delete a thing</title><link href="http://localhost:4000/stuff/2012/12/24/delete-a-thing.html" rel="alternate" type="text/html" title="Delete a thing" /><published>2012-12-24T00:00:00-07:00</published><updated>2012-12-24T00:00:00-07:00</updated><id>http://localhost:4000/stuff/2012/12/24/delete-a-thing</id><content type="html" xml:base="http://localhost:4000/stuff/2012/12/24/delete-a-thing.html">&lt;p&gt;This method allows the user to post a new thing to his stuff.&lt;/p&gt;
+
+&lt;h3 id=&quot;request&quot;&gt;Request&lt;/h3&gt;
+
+&lt;ul&gt;
+  &lt;li&gt;&lt;strong&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;:id&lt;/code&gt;&lt;/strong&gt; is the id the thing to delete.&lt;/li&gt;
+  &lt;li&gt;The headers must include a &lt;strong&gt;valid authentication token&lt;/strong&gt;.&lt;/li&gt;
+  &lt;li&gt;&lt;strong&gt;The body is omitted&lt;/strong&gt;.&lt;/li&gt;
+&lt;/ul&gt;
+
+&lt;h3 id=&quot;response&quot;&gt;Response&lt;/h3&gt;
+
+&lt;p&gt;Sends back a collection of things.&lt;/p&gt;
+
+&lt;p&gt;&lt;code class=&quot;highlighter-rouge&quot;&gt;Status: 200 Deleted&lt;/code&gt;
+&lt;code class=&quot;highlighter-rouge&quot;&gt;{
+    code: 200,
+    message: 'Your thing (id: 736) was deleted'
+}&lt;/code&gt;&lt;/p&gt;
+
+&lt;p&gt;For errors responses, see the &lt;a href=&quot;#response-status-codes&quot;&gt;response status codes documentation&lt;/a&gt;.&lt;/p&gt;</content><author><name></name></author><category term="Stuff" /><summary type="html">This method allows the user to post a new thing to his stuff.</summary></entry></feed>

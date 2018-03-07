@@ -1,0 +1,11 @@
+{
+  "requires": true,
+  "lockfileVersion": 1,
+  "dependencies": {
+    "jekyll": {
+      "version": "3.0.0-beta1",
+      "resolved": "https://registry.npmjs.org/jekyll/-/jekyll-3.0.0-beta1.tgz",
+      "integrity": "sha1-MnSfAwBM/yF78pmI9uRCBgZHn/k="
+    }
+  }
+}

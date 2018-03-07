@@ -1,0 +1,86 @@
+[Settings]
+  ID = "Your_Site_ID"
+
+# Settings in the [build] context are global and are applied to all contexts unless otherwise overridden by more specific contexts.  
+
+[build]
+# This is the directory to change to before starting a build. 
+  base    = "carte/"
+  # NOTE: This is where we will look for package.json/.nvmrc/etc, not root.
+# This is the directory that you are publishing from (relative to root of your repo)
+  publish = "carte/_site/"
+# This will be your default build command
+  command = "echo 'jekyll build'" 
+# This is where we will look for your lambda functions
+  functions = "project/lib/" 
+
+# Production context: All deploys from the Production branch set in your site's deploy settings will inherit these settings.
+[context.production]
+  publish = "output/"
+  command = "make publish"
+  environment = { ACCESS_TOKEN = "super secret", NODE_ENV = "8.0.1" } 
+
+# Deploy Preview context: All Deploy Previews (https://www.netlify.com/blog/2016/07/20/introducing-deploy-previews-in-netlify/)
+# will inherit these settings.
+[context.deploy-preview]
+  publish = "dist/"
+# Here is another way to define context specific environment variables
+[context.deploy-preview.environment]
+  ACCESS_TOKEN = "not so secret"
+
+# Branch Deploy context: All deploys that are not resulting from a Pull/Merge Request and not from the primary, linked branch will inherit these settings.
+[context.branch-deploy]
+  command = "echo branch"
+[context.branch-deploy.environment]
+    NODE_ENV = "developement"
+
+# Specific branch context: Deploys from this branch
+# will take these settings and override their
+# current ones.
+[context.staging] # 'staging' is a branch name
+  command = "echo 'staging'"
+  base = "staging"
+
+# A basic redirects rule
+[[redirects]]
+  from = "/*"
+  to = "/blog/:splat"
+
+# The following show an example redirects rule with all the supported properties.
+[[redirects]]
+  from = "/old-path"
+  to = "/new-path"
+  status = 301
+  force = false
+  query = {path = ":path"} # apply this rule for /old-path?path=example
+# NOTE: Each combination of query params will need to be defined in a separate [[redirects]] block. More here: https://www.netlify.com/docs/redirects/#query-params
+# You can also define custom headers within your redirects blocks
+  headers = {X-From = "Netlify", X-Api-Key = "some-api-key-string"}
+  conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}
+# you can use env variables you've set in the UI or within your contexts as values
+# sign each request with the value of this env variable
+  signed = "
+a6b54526-cba1-44d2-b8e9-b0aa67d16ed8" 
+# NOTE: env variables are only natively supported for this signed property of headers via this mechanism!
+
+# The following redirect is intended for use with most SPA's that handles routing internally.
+[[redirects]]
+  from = "/*"
+  to = "/index.html"
+  status = 200
+  force = true # Ensure that we always redirect
+
+[[headers]]
+  for = "/*" # This defines which paths this specific [[headers]] block will cover.
+[headers.values]
+  X-Frame-Options = "DENY"
+  X-XSS-Protection = "1; mode=block"
+  Content-Security-Policy = "frame-ancestors https://www.facebook.com"
+  # Multi-key header rules are expressed with multi-line strings
+  Link = '''
+  </assets/css/base.css>; rel=preload; as=style, \
+  </assets/css/base2.css>; rel=preload; as=style, \
+  </assets/css/base3.css>; rel=preload; as=style'''
+  # Basic-Auth allows you to password protect your whole site but is only available
+  # to paid accounts
+  Basic-Auth = "someuser:somepassword anotheruser:anotherpassword"
