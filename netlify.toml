@@ -59,7 +59,8 @@
   conditions = {Language = ["en"], Country = ["US"], Role = ["admin"]}
 # you can use env variables you've set in the UI or within your contexts as values
 # sign each request with the value of this env variable
-  signed = "API_SIGNATURE_TOKEN" 
+  signed = "
+a6b54526-cba1-44d2-b8e9-b0aa67d16ed8" 
 # NOTE: env variables are only natively supported for this signed property of headers via this mechanism!
 
 # The following redirect is intended for use with most SPA's that handles routing internally.
