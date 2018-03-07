@@ -1,0 +1,25 @@
+<p>This method allows users to create a new thing.</p>
+
+<h3 id="request">Request</h3>
+
+<ul>
+  <li>The headers must include a <strong>valid authentication token</strong>.</li>
+  <li><strong>The body can’t be empty</strong> and must include at least the name attribute, a <code class="highlighter-rouge">string</code> that will be used as the name of the thing.</li>
+</ul>
+
+<p><code class="highlighter-rouge">Authentication: bearer TOKEN</code>
+<code class="highlighter-rouge">{
+    name: 'My new thing'
+}</code></p>
+
+<h3 id="response">Response</h3>
+
+<p><strong>If succeeds</strong>, returns the created thing.</p>
+
+<p><code class="highlighter-rouge">Status: 201 Created</code>
+<code class="highlighter-rouge">{
+    id: new_thing,
+    name: 'My new thing'
+}</code></p>
+
+<p>For errors responses, see the <a href="#response-status-codes">response status codes documentation</a>.</p>
