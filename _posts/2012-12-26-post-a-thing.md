@@ -1,10 +1,10 @@
 ---
 category: Stuff
-path: '/stuff'
+url_path: '/stuff'
 title: 'Post a thing'
 type: 'POST'
 
-layout: nil
+layout: null
 ---
 
 This method allows users to create a new thing.

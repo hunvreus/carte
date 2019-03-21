@@ -1,10 +1,10 @@
 ---
 category: Stuff
-path: '/stuff/:id'
+url_path: '/stuff/:id'
 title: 'Delete a thing'
 type: 'DELETE'
 
-layout: nil
+layout: null
 ---
 
 This method allows the user to post a new thing to his stuff.
