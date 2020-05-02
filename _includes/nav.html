@@ -8,10 +8,8 @@
   {% for category in site.categories %}
   <li><h2>{{ category | first }}</h2>
     <ul>
-    {% for posts in category %}
-      {% for post in posts %}        
-        <li class='{{ post.type }}'><a href='#{{ post.url }}'>{{ post.title }}</a></li>
-      {% endfor %}
+    {% for post in category.last %}
+      <li class='{{ post.type }}'><a href='#{{ post.url }}'>{{ post.title }}</a></li>
     {% endfor %}
     </ul>
   </li>
