@@ -1,0 +1,9 @@
+image:
+  file: gitpod/gitpod.Dockerfile
+
+ports:
+  - port: 4000
+    onOpen: open-preview
+
+tasks:
+  - init: gem install jekyll

@@ -1,4 +1,4 @@
-.*
+.jekyll-cache/
 !.gitignore
 !.gitmodules
 *~

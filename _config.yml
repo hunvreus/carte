@@ -1,5 +1,5 @@
 ---
-exclude: ['README.markdown']
+exclude: ['README.markdown', 'gitpod']
 permalink: ':title'
 highlighter: pygments
 safe: false
