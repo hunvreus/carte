@@ -445,7 +445,7 @@ code {
   float: left;  
   height: 100%;
   overflow: auto;
-  position: absolute;
+  position: fixed;
   top: 0;
   width: 240px;
 }
