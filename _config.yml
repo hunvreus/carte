@@ -3,4 +3,4 @@ exclude: ['README.markdown']
 permalink: ':title'
 highlighter: pygments
 safe: false
-title: 'Carte'
+title: '重庆艾迪逊电子'
